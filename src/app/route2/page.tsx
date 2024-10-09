@@ -74,7 +74,7 @@ const PageAxios : React.FC = () =>
                     return(
                         <div key={item.id} className="flex flex-col justify-center items-center border-black border-2 border-solid w-64 h-96 bg-slate-100">
                             <Image 
-                                src={item.image} alt={item.name} width={100} height={100}
+                                src={item.image} alt={item.name} width={1000} height={1000}
                                 className="h-3/5 w-auto object-contain"
                             />
                             <hr className="w-full"/>
