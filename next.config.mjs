@@ -19,6 +19,10 @@ const nextConfig =
                 source: "/primeira-rota",
                 destination: "/route1",
             },
+            {
+                source: "/segunda-rota",
+                destination: "/route2",
+            },
         ]
     }
 };
