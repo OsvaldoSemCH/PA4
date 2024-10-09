@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import React, {useEffect, useState} from "react";
+import React, {Suspense, useEffect, useState} from "react";
 
 interface IData
 {
@@ -33,15 +33,17 @@ const PageFetch : React.FC = () =>
                 Characters.map((item) =>
                 {
                     return(
-                        <div key={item.id} className="flex flex-col justify-center items-center border-black border-2 border-solid w-64 h-96 bg-slate-100">
-                            <Image 
-                                src={item.image} alt={item.name} width={1000} height={1000}
-                                className="h-3/5 w-auto object-contain"
-                            />
-                            <hr className="w-full"/>
-                            <p className="text-xl">{item.name}</p>
-                            <p className="text-lg">Ki: {item.ki}</p>
-                        </div>
+                        <Suspense fallback={<p className="text-xl">Carregando resultados...</p>}>
+                            <div key={item.id} className="flex flex-col justify-center items-center border-black border-2 border-solid w-64 h-96 bg-slate-100">
+                                <Image 
+                                    src={item.image} alt={item.name} width={1000} height={1000}
+                                    className="h-3/5 w-auto object-contain"
+                                />
+                                <hr className="w-full"/>
+                                <p className="text-xl">{item.name}</p>
+                                <p className="text-lg">Ki: {item.ki}</p>
+                            </div>
+                        </Suspense>
                     )
                 })
             }</div>
