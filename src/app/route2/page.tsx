@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image";
-import React, {useEffect, useState} from "react";
+import React, {Suspense, useEffect, useState} from "react";
 import { Api } from "@/constants/api";
 
 interface IData
@@ -66,6 +66,7 @@ const PageAxios : React.FC = () =>
                     className="p-2"
                 />
             </div>
+            <Suspense fallback={<p className="text-xl">Carregando resultados...</p>}>
             <div className="flex flex-wrap justify-center items-center gap-4">{
                 Characters.length ? 
                 Characters.map((item) =>
@@ -83,6 +84,7 @@ const PageAxios : React.FC = () =>
                     )
                 }) : <p className="text-xl">Nenhum personagem foi encontrado</p>
             }</div>
+            </Suspense>
         </div>
     )
 }
