@@ -23,6 +23,10 @@ const nextConfig =
                 source: "/segunda-rota",
                 destination: "/route2",
             },
+            {
+                source: "/terceira-rota",
+                destination: "/route3",
+            },
         ]
     }
 };
