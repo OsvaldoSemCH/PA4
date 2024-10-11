@@ -27,9 +27,9 @@ const PageFetch : React.FC = () =>
     }, []);
 
     return (
-        <>
+        <div className="flex flex-col items-center">
             <h1 className="my-4 text-center text-2xl font-bold">Requisições com Fetch Client-side</h1>
-            <div className="flex flex-wrap justify-center items-center gap-4">{
+            <div className="flex flex-wrap justify-center items-center gap-4 w-3/4 my-4">{
                 Characters.map((item) =>
                 {
                     return(
@@ -47,7 +47,7 @@ const PageFetch : React.FC = () =>
                     )
                 })
             }</div>
-        </>
+        </div>
     )
 }
 

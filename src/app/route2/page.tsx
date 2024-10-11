@@ -67,7 +67,7 @@ const PageAxios : React.FC = () =>
                 />
             </div>
             <Suspense fallback={<p className="text-xl">Carregando resultados...</p>}>
-            <div className="flex flex-wrap justify-center items-center gap-4">{
+            <div className="flex flex-wrap justify-center items-center gap-4 w-3/4 my-4">{
                 Characters.length ? 
                 Characters.map((item) =>
                 {

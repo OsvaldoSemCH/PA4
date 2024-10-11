@@ -35,7 +35,7 @@ const PageCharacter = async ({params: {id}} : CharacterParams) =>
         <div className="flex flex-col justify-center items-center">
             <h1 className="my-4 text-center text-2xl font-bold">Detalhes do Personagem</h1>
             <Suspense fallback={<p className="text-xl">Carregando resultados...</p>}>
-                <div className="flex flex-col md:flex-row items-center border-black border-2 border-solid w-64 md:w-[40rem] h-fit bg-slate-100">
+                <div className="flex flex-col md:flex-row items-center border-black border-2 border-solid w-64 md:w-[40rem] h-fit bg-slate-100 p-4">
                     <Image 
                         src={Character.image} alt={Character.name} width={1000} height={1000}
                         className="w-[20rem] max-h-[30rem] object-contain"
@@ -61,7 +61,7 @@ const PageCharacter = async ({params: {id}} : CharacterParams) =>
 
 export async function generateStaticParams()
 {
-    const Res = await fetch(`https://dragonball-api.com/api/characters/`);
+    const Res = await fetch(`https://dragonball-api.com/api/characters?limit=100`);
     const Data : CharacterDataSI = await Res.json();
     return Data.items.map((item) => (item.id.toString()));
 }

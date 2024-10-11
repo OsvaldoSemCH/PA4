@@ -18,10 +18,10 @@ const PageServerFetch : React.FC = async () =>
     const Response = await fetch("https://dragonball-api.com/api/characters?limit=100");
     const Characters : TData = await Response.json();
     return (
-        <>
+        <div className="flex flex-col items-center">
             <h1 className="my-4 text-center text-2xl font-bold">Requisições com Fetch Server-side</h1>
             <Suspense fallback={<p className="text-xl">Carregando resultados...</p>}>
-                <div className="flex flex-wrap justify-center items-center gap-4">{
+                <div className="flex flex-wrap justify-center items-center gap-4 w-3/4 my-4">{
                     Characters.items.map((item) =>
                     {
                         return(
@@ -44,7 +44,7 @@ const PageServerFetch : React.FC = async () =>
                     })
                 }</div>
             </Suspense>
-        </>
+        </div>
     )
 }
 
